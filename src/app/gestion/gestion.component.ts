@@ -21,11 +21,16 @@ export class GestionComponent implements OnInit  {
   
   public allProduits()
   {
-    let res=this.api.getAllProduits()
+    let res=this.api.getproducts()
     res.subscribe(data => this.produits=data)
   }
   
-  
+  public delete(id :number)
+  {
+    let res=this.api.deleteProduct(id)
+    res.subscribe(data => alert(data))
+    this.allProduits()
+  }
  
  
   }

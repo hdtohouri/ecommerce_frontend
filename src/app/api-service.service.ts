@@ -7,13 +7,18 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ApiServiceService {
 
-  url:string="http://localhost:8585"
+  url:string="http://localhost:8282"
   constructor(private http:HttpClient) { }
 
 //les methodes de REST API
-public getAllProduits()
+public getproducts()
 {
   return this.http.get(this.url+"/products")
+}
+
+public productresgister(products:any)
+{
+  return this.http.post(this.url+"/add/product",products,{responseType:'text' as 'json'})
 }
 
 public getUsers()
@@ -21,9 +26,9 @@ public getUsers()
   return this.http.get(this.url+"/users")
 }
 
-public deleteUser(id:number)
+public deleteProduct(id:number)
 {
-  return this.http.delete(this.url+"/user/"+id,{responseType:'text' as 'json'})
+  return this.http.delete(this.url+"/product/"+id,{responseType:'text' as 'json'})
 }
 
 

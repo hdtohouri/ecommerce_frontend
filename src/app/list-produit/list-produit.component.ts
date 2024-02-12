@@ -7,8 +7,10 @@ import { ApiServiceService } from '../api-service.service';
 })
 export class ListProduitComponent implements OnInit {
 
-  produits:any  =[]
-
+  nom:string=""
+  image:string=""
+  prix: number=0
+  produits:any={"idproduit":0,"nomproduit":"","prix":0} 
   constructor(private api:ApiServiceService)
   {}
   
@@ -20,11 +22,9 @@ export class ListProduitComponent implements OnInit {
   
   public allProduits()
   {
-    let res=this.api.getAllProduits()
+    let res=this.api.getproducts()
     res.subscribe(data => this.produits=data)
   }
   
-  
- 
  
 }

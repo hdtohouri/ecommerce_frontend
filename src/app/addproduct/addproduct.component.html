@@ -1,0 +1,35 @@
+
+<div class="container d-flex justify-content-center align-items-center pt-5" style="min-height: 50vh;">
+    <form class="border shadow p-3 rounded" style="width: 400px;">
+        <div class="login-title">
+            <h3 class="text-center text-primary">Ajout Produit</h3><br>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Nom Du Produit</label>
+            <input type="text" class="form-control" name="product_name" [(ngModel)]="product_name"
+                placeholder="Veuillez saisir le nom du produit">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Description Du Produit</label>
+            <input type="text" class="form-control" name="product_description" [(ngModel)]="product_description"
+                placeholder="Veuillez saisir la description du produit">
+        </div>
+        <div class="mb-3">
+            <label for="fullname" class="form-label">Image Du Produit</label>
+            <input type="file" class="form-control" name="product_image" [(ngModel)]="product_image">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Prix Du Produit</label>
+            <input type="number" class="form-control" name="product_price" [(ngModel)]="product_price"
+                placeholder="Veuillez saisir le prix du produit">
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group mb-0">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Ajouter" (click)="productresgister()">
+                </div>
+            </div>
+        </div>
+        <hr>
+    </form>
+</div>
